@@ -331,7 +331,7 @@ autoplay = &"move"
 position = Vector2(69, 80)
 
 [node name="slime2" parent="." unique_id=1038046376 instance=ExtResource("6_p57ef")]
-position = Vector2(59, -3)
+position = Vector2(74, -4)
 
 [node name="slime3" parent="." unique_id=1892892620 instance=ExtResource("6_p57ef")]
 position = Vector2(357, -65)
