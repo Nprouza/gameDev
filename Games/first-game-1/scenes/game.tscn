@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://c4wwglgjrju3f"]
 
+[ext_resource type="Script" uid="uid://cqejrsmc268nk" path="res://scripts/games_manager.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://cs4wse7vw4egk" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://Assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://c3lxluskb24ag" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://465588ku14lh" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bjoyxyyp4gyf0" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://es372k5hoj1h" path="res://scenes/slime.tscn" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://Assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -204,6 +207,21 @@ _data = {
 
 [node name="Game" type="Node2D" unique_id=1573506144]
 
+[node name="GamesManager" type="Node" parent="." unique_id=1537122611]
+unique_name_in_owner = true
+script = ExtResource("1_gee14")
+
+[node name="scoreLabel" type="Label" parent="GamesManager" unique_id=1690933374]
+offset_left = 531.0
+offset_top = -67.0
+offset_right = 619.0
+offset_bottom = -37.0
+theme_override_fonts/font = ExtResource("2_0tnpc")
+theme_override_font_sizes/font_size = 8
+text = "You cellcected X coins."
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="TileMap" type="TileMap" parent="." unique_id=359786954]
 tile_set = SubResource("TileSet_nxaaw")
 format = 2
@@ -335,3 +353,25 @@ position = Vector2(74, -4)
 
 [node name="slime3" parent="." unique_id=1892892620 instance=ExtResource("6_p57ef")]
 position = Vector2(357, -65)
+
+[node name="labels" type="Node" parent="." unique_id=885098556]
+
+[node name="Label" type="Label" parent="labels" unique_id=231947111]
+offset_left = -105.0
+offset_top = 43.0
+offset_right = -19.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.13333334, 0.07058824, 1, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Space to Jump"
+
+[node name="Label2" type="Label" parent="labels" unique_id=534542168]
+offset_left = 15.0
+offset_top = -52.0
+offset_right = 117.0
+offset_bottom = -40.0
+theme_override_colors/font_color = Color(0.0039038195, 0.0051845345, 0.0051581734, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "collect all coins"
